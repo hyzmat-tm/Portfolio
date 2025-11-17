@@ -4,23 +4,32 @@ function Navigation() {
   return (
     <ul className="nav-ul">
       <li className="nav-li">
-        <a className="nav-link" href="#home">
+        <a className="nav-link" href="/#home">
           Home
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#about">
+        <a className="nav-link" href="/#about">
           About
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#work">
+        <a className="nav-link" href="/#work">
           Work
         </a>
       </li>
       <li className="nav-li">
-        <a className="nav-link" href="#contact">
+        <a className="nav-link" href="/#contact">
           Contact
+        </a>
+      </li>
+      <li className="nav-li">
+        <a
+          className="nav-link text-blue-400 hover:text-blue-300"
+          href="/login"
+          title="Admin Panel"
+        >
+          ⚙️ Admin
         </a>
       </li>
     </ul>

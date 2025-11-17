@@ -27,6 +27,9 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 - 💌 Working contact form using **EmailJS**
 - 🧱 Beautiful UI enhancements with **Aceternity UI** and **Magic UI**
 - 🚀 Lightning-fast development with **Vite**
+- 🎯 **Admin Panel** - Управляйте проектами через веб-интерфейс без изменения кода
+- 🔐 **Аутентификация** - Защита админ-панели паролем
+- 📊 **REST API** - Backend для динамического управления проектами
 
 ---
 
@@ -53,11 +56,16 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 │   ├── assets/             # Images, textures, models
 │   ├── models/             # 3D Astronaut model
 │   └── vite.svg
+├── server/                 # Backend API server
+│   ├── server.js           # Express API server
+│   ├── db.json             # JSON database for projects
+│   └── package.json        # Server dependencies
 ├── src/
 │   ├── components/         # Reusable components
 │   ├── constants/          # Reusable datas
+│   ├── pages/              # App pages (Home, Admin, Login)
 │   ├── sections/           # Portfolio sections (Hero, About, etc.)
-│   ├── App.jsx             # Main app file
+│   ├── App.jsx             # Main app file with routing
 │   ├── index.css           # Tailwind css
 │   └── main.jsx            # Entry point
 ├── tailwind.config.js
@@ -67,6 +75,25 @@ A modern, animated 3D developer portfolio built with React, Three.js, TailwindCS
 ---
 
 ## 🚀 Getting Started
+
+### Первая настройка
+
+1. **Настройте переменные окружения**
+```bash
+# Скопируйте примеры
+copy .env.example .env
+copy server\.env.example server\.env
+
+# Откройте файлы и установите свой пароль:
+# .env → VITE_ADMIN_PASSWORD=ваш_пароль
+# server\.env → ADMIN_PASSWORD=ваш_пароль
+```
+
+2. **Важно:** Не используйте стандартный пароль `admin123` в продакшене!
+   📖 Подробнее: [SECURITY.md](SECURITY.md)
+
+### Frontend Setup
+
 1. Clone the Repository
 ```bash
 git clone https://github.com/Ali-Sanati/Portfolio.git
@@ -82,6 +109,58 @@ npm run dev
 ```
 The app will be available at http://localhost:5173.
 
+### Backend Setup (для управления проектами)
+
+1. Navigate to server directory
+```bash
+cd server
+```
+
+2. Install server dependencies
+```bash
+npm install
+```
+
+3. Start the API server
+```bash
+npm start
+```
+The API will be available at http://localhost:3001.
+
+---
+
+## 🔐 Admin Panel
+
+Система управления проектами доступна через веб-интерфейс:
+
+1. Убедитесь, что сервер запущен (`npm start` в папке `server`)
+2. Откройте браузер и перейдите: `http://localhost:5173/login`
+3. Войдите с паролем из `.env` (по умолчанию: `admin123`)
+4. Добавляйте, редактируйте или удаляйте проекты через удобный интерфейс
+
+⚠️ **Безопасность:** Измените пароль в файле `.env` перед деплоем!
+📖 Подробная инструкция: [SECURITY.md](SECURITY.md)
+
+### API Endpoints
+
+- `GET /api/projects` - Получить все проекты
+- `POST /api/projects` - Создать новый проект
+- `PUT /api/projects/:id` - Обновить проект
+- `DELETE /api/projects/:id` - Удалить проект
+
+### Как добавить проект из Kwork
+
+1. Перейдите на `/login` и войдите в админ-панель
+2. Заполните форму с информацией о проекте:
+   - Название проекта
+   - Описание
+   - Детальное описание (список пунктов)
+   - Путь к изображению проекта
+   - Теги (технологии)
+   - Ссылка на проект (опционально)
+3. Нажмите "Создать проект"
+4. Проект автоматически появится на главной странице портфолио
+
 ---
 
 ## 🔗 Assets
@@ -90,9 +169,9 @@ Assets used in the project can be found [here](https://github.com/user-attachmen
 ---
 
 ## 📬 Contact Me
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ali.sanatidev/reels/) 
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ali.sanatidev/reels/)
 [![Static Badge](https://img.shields.io/badge/Youtube-%23FF0033?style=flat&logo=youtube)](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-sanati/) 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-sanati/)
 
 ---
 

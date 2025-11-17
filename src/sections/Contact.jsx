@@ -1,10 +1,10 @@
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
 
+const API_URL = import.meta.env.VITE_API_URL?.replace('/api/projects', '') || 'http://localhost:3001';
+
 const Contact = () => {
-  const formRef = useRef();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -34,29 +34,35 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      await emailjs.sendForm(
-        "service_g3fzpo8",
-        "template_rd0e9ns",
-        formRef.current,
-        "mkj5-n1__MCODrKOF"
-      );
+      const response = await fetch(`${API_URL}/api/send-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "Your message has been sent!");
+      showAlertMessage("success", "Ваше сообщение успешно отправлено!");
     } catch (error) {
       setIsLoading(false);
-      console.error("EmailJS error:", error);
-      showAlertMessage("danger", "Something went wrong!");
+      console.error("Email error:", error);
+      showAlertMessage("danger", "Ошибка при отправке. Попробуйте позже.");
     }
   };
 
   return (
-    <section className="relative flex items-center c-space section-spacing">
+    <section id="contact" className="relative c-space section-spacing">
       <Particles
-        className="absolute inset-0 -z-50"
-        quantity={100}
+        className="absolute inset-0 z-0"
+        quantity={250}
         ease={80}
-        color={"#ffffff"}
+        color="#ffffff"
         refresh
       />
       {showAlert && <Alert type={alertType} text={alertMessage} />}
@@ -68,7 +74,7 @@ const Contact = () => {
             platform, or bring a unique project to life, I'm here to help.
           </p>
         </div>
-        <form ref={formRef} className="w-full" onSubmit={handleSubmit}>
+        <form className="w-full" onSubmit={handleSubmit}>
           <div className="mb-5">
             <label htmlFor="name" className="feild-label">Full Name</label>
             <input
