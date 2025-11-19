@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
+import { trackEvent } from "../components/Analytics";
 
 const API_URL = import.meta.env.VITE_API_URL?.replace('/api/projects', '') || 'http://localhost:3001';
 
@@ -49,6 +50,12 @@ const Contact = () => {
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
       showAlertMessage("success", "Ваше сообщение успешно отправлено!");
+
+      // Track form submission
+      trackEvent('contact_form_submit', {
+        event_category: 'contact',
+        event_label: 'Contact Form'
+      });
     } catch (error) {
       setIsLoading(false);
       console.error("Email error:", error);

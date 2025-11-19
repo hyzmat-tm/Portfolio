@@ -10,5 +10,8 @@ export default defineConfig({
     port: 5173,
     allowedHosts: ['portfolio.hyzmat-tm.com'],
   },
+  preview: {
+    port: 5173,
+  },
 });
 

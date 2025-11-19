@@ -2,11 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="alternate icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Atajan</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Atajan Azadovich - Full Stack Developer specializing in React, Node.js, C#, .NET and modern web technologies. 4+ years of experience." />
+    <meta name="keywords" content="portfolio, web developer, full stack, react, node.js, javascript, c#, .net, typescript, атажан, разработчик" />
+    <meta name="author" content="Atajan Azadovich" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio.hyzmat-tm.com/" />
+    <meta property="og:title" content="Atajan Azadovich - Full Stack Developer Portfolio" />
+    <meta property="og:description" content="Portfolio showcasing modern web development projects and 4+ years of experience" />
+    <meta property="og:image" content="/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://portfolio.hyzmat-tm.com/" />
+    <meta property="twitter:title" content="Atajan Azadovich - Full Stack Developer" />
+    <meta property="twitter:description" content="Portfolio showcasing modern web development projects" />
+    <meta property="twitter:image" content="/og-image.jpg" />
+
+    <title>Atajan Azadovich - Full Stack Developer Portfolio</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      // Замените XXXXXXXX на ваш номер счетчика
+      ym(105367906, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+      });
+    </script>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M9H5Y2P4Y9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Замените G-XXXXXXXXXX на ваш ID
+      gtag('config', 'G-M9H5Y2P4Y9');
+    </script>
+    <!-- End Google Analytics -->
   </head>
   <body>
+    <!-- Yandex.Metrika -->
+    <noscript><div><img src="https://mc.yandex.ru/watch/105367906" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

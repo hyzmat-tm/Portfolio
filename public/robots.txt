@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Disallow admin panel for search engines
+User-agent: *
+Disallow: /admin
+Disallow: /login
