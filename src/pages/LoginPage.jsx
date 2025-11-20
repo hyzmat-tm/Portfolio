@@ -80,7 +80,7 @@ const LoginPage = () => {
 
         <div className="mt-6 p-4 bg-neutral-800 rounded-lg">
           <p className="text-neutral-400 text-xs text-center">
-            💡 Пароль настраивается в файле .env
+            💡 Кажется вам сюда нельзя!)
           </p>
         </div>
       </motion.div>
