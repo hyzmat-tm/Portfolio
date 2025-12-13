@@ -3,9 +3,8 @@ import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
 import { trackEvent } from "../components/Analytics";
 
-const API_URL = import.meta.env.VITE_API_URL?.replace('/api/projects', '') || 'http://localhost:3001';
-
-const Contact = () => {
+// Используем пустую строку для относительного пути (тот же домен)
+const API_BASE_URL = '';const Contact = () => {
 
   const [formData, setFormData] = useState({
     name: "",
@@ -35,7 +34,7 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch(`${API_URL}/api/send-email`, {
+      const response = await fetch(`${API_BASE_URL}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

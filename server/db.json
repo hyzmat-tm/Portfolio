@@ -3,6 +3,7 @@
     {
       "id": 1,
       "title": "E-commerce Platform",
+      "category": "personal",
       "description": "Facilitates purchases from international websites like Amazon and eBay, allowing customers to shop from these sites and have products delivered domestically.",
       "subDescription": [
         "Built a scalable application with ASP.NET Core MVC, integrating global platforms like Amazon for domestic delivery.",
@@ -39,6 +40,7 @@
     {
       "id": 2,
       "title": "Authentication & Authorization System",
+      "category": "kwork",
       "description": "A secure authentication and authorization system using Auth0 for seamless user management.",
       "subDescription": [
         "Integrated Auth0 for authentication, supporting OAuth, JWT, and multi-factor authentication.",
@@ -75,6 +77,7 @@
     {
       "id": 3,
       "title": "Blazor Web App",
+      "category": "personal",
       "description": "A modern, interactive web application built with Blazor WebAssembly and .NET Core.",
       "subDescription": [
         "Developed a fully interactive Single Page Application (SPA) using Blazor WebAssembly.",
@@ -111,6 +114,7 @@
     {
       "id": 4,
       "title": "C++ Game Engine",
+      "category": "personal",
       "description": "A lightweight C++ game engine designed for 2D and 3D game development.",
       "subDescription": [
         "Built a powerful rendering engine using OpenGL and C++.",
@@ -147,6 +151,7 @@
     {
       "id": 5,
       "title": "WordPress Custom Theme",
+      "category": "kwork",
       "description": "A fully customizable WordPress theme optimized for performance and SEO.",
       "subDescription": [
         "Developed a responsive WordPress theme using HTML5, CSS3, and JavaScript.",
@@ -183,6 +188,7 @@
     {
       "id": 6,
       "title": "Online Learning Platform",
+      "category": "kwork",
       "description": "A web application that allows users to enroll in courses, watch video lectures, and take quizzes.",
       "subDescription": [
         "Built using Blazor WebAssembly for a seamless SPA experience.",
@@ -213,6 +219,38 @@
           "id": 4,
           "name": "TailwindCSS",
           "path": "/assets/logos/tailwindcss.svg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "tagstyle",
+      "category": "kwork",
+      "description": "birka",
+      "subDescription": [],
+      "href": "",
+      "logo": "",
+      "image": "/assets/projects/project-1763970282265-471522122.png",
+      "tags": [
+        {
+          "id": 1,
+          "name": "CSS3",
+          "path": "/assets/logos/css3.svg"
+        },
+        {
+          "id": 2,
+          "name": "Vite.js",
+          "path": "/assets/logos/vitejs.svg"
+        },
+        {
+          "id": 3,
+          "name": "JavaScript",
+          "path": "/assets/logos/javascript.svg"
+        },
+        {
+          "id": 4,
+          "name": "Next.js",
+          "path": "/assets/logos/nextjs.svg"
         }
       ]
     }
